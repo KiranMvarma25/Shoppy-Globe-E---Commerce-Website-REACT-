@@ -24,8 +24,9 @@ const cartSlice = createSlice({                         // Create a slice for ca
             
             const index = state.items.findIndex(item => item.id == action.payload);         // Find the index of the item to remove based on its id
             if(index !== -1){
-                state.totalPrice -= state.items[index].price;
-                state.items.splice(index,1);
+                const itemToRemove = state.items[index];
+                state.totalPrice -= itemToRemove.price * itemToRemove.quantity;
+                state.items.splice(index, 1);
             }
             if(state.items.length == 0)
                 state.totalPrice = 0;
