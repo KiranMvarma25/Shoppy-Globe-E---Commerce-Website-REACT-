@@ -7,6 +7,11 @@ function App(){
     <>
       <Header /> {/* Renders the Header component at the top of every page. */}
       <Outlet /> {/* The Outlet component acts as a space, render's it's children component which are routed in it. */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Footer /> {/* Renders the Footer component at the bottom of every page */}
     </>
   )
