@@ -20,9 +20,12 @@ function useFetchProducts(url) {                                              //
 
   const [showSpinner, setShowSpinner] = useState(false);                      // state to manage loading spinner visibility
 
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     const fetchProducts = async () => {                                       // Fetching products asynchronously when the component mounts
       setShowSpinner(true);
+      setError(null);
 
       try{
         const response = await fetch(url);
@@ -32,8 +35,11 @@ function useFetchProducts(url) {                                              //
       
       catch(error){
         console.error("Failed to fetch products:", error);
+        setError("Failed to load products. Please try again later.");
       }
-      setShowSpinner(false);
+      finally {
+        setShowSpinner(false);
+      }
     };
 
     fetchProducts();
