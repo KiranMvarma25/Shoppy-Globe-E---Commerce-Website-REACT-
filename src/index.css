@@ -411,7 +411,7 @@ body{
 .footer{
     background-color: black;
     color: white;
-    height: 250px;
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

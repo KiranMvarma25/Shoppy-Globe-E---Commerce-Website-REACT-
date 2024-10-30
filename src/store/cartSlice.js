@@ -8,9 +8,17 @@ const cartSlice = createSlice({                         // Create a slice for ca
     },
     reducers : {                                        // Reducers to add, remove and clear items from the cart
         addToCart : (state,action) => {
-            state.items.push(action.payload);
+            const alreadyPresentItem = state.items.find(item => item.id === action.payload.id);
+                
+            if(alreadyPresentItem) 
+                alreadyPresentItem.quantity += 1;
+                
+            else 
+                state.items.push({ ...action.payload, quantity: 1 });
+                
             state.totalPrice += action.payload.price;
         },
+
         removeFromCart : (state,action) => {
             // state.items = state.items.filter(item => item.id != action.payload);
             

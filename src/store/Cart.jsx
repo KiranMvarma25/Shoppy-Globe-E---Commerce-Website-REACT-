@@ -51,6 +51,7 @@ function Cart(){
                   <h3 className="cartSetGrandChildh3">{item.title}</h3>
                   <h4 className="cartSetGrandChildh4">Price : ${item.price}</h4>
                   <h4 className="cartSetGrandChildh4">View Details</h4>
+                  <h3 className="cartSetGrandChildh3">Quantity : {item.quantity}</h3>
                   <br />
                 </div>
               </Link>

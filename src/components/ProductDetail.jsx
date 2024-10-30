@@ -6,6 +6,8 @@ import { addToCart } from "../store/cartSlice";
 
 import { toast } from "react-toastify";
 
+import { FaCartPlus } from "react-icons/fa";
+
 function ProductDetails() {
   const params = useParams();                           // Extracts the `id` parameter from the route URL
   const [product, setProduct] = useState(null);         // State to hold product details
@@ -36,10 +38,10 @@ function ProductDetails() {
   const dispatch = useDispatch();                      // dispatch actions
 
   const handleClickAddToCart = () => {
-    if(product && !isInCart) {                         // Check if product exists and is not already in the cart
+    // if(product && !isInCart) {                         // Check if product exists and is not already in the cart
       dispatch(addToCart(product));
       toast.success("Added to Cart");
-    }
+    // }
   };
 
 
@@ -70,7 +72,7 @@ function ProductDetails() {
               
               <div className="productDetailsSetChild">
                 <br />
-                <h2 className="productDetailsSetHeadingChild">Price : ${displayedProduct.price}</h2>
+                <h2 className="productDetailsSetHeadingChild">Price : ${parseFloat(displayedProduct.price).toFixed(2)}</h2>
                 <br />
                 <h2 className="productDetailsSetHeadingChild">Discount Price : {displayedProduct.discountPercentage} %</h2>
                 <br />
@@ -82,7 +84,7 @@ function ProductDetails() {
               </div>
             </div>
 
-            <button className="productDetailsSetButtonChild" onClick={handleClickAddToCart} disabled={isInCart}>{isInCart ? "In Cart" : "Add to Cart"} </button>
+            <button className="productDetailsSetButtonChild" onClick={handleClickAddToCart} ><FaCartPlus /> Add to Cart</button>
 
             <br />
             <br />
@@ -103,9 +105,9 @@ function ProductDetails() {
             
             <br />
             
-            <h3>Order Quantity : {displayedProduct.minimumOrderQuantity}</h3>
+            {/* <h3>Order Quantity : {displayedProduct.minimumOrderQuantity}</h3>
             
-            <br />
+            <br /> */}
             
             <h4>Return Policy : {displayedProduct.returnPolicy}</h4>
             

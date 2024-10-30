@@ -12,6 +12,8 @@ import { toast } from "react-toastify";
 import Spinner from "../Spinner";
 
 import { FaSearch } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
+
 
 
 function useFetchProducts(url) {                                              // Custom hook to fetch data from the API
@@ -125,7 +127,7 @@ function ProductList(){
                   <ProductItem productItem={item} />
                   <h4 className="cartSetGrandChildh4">View Details</h4>
                 </Link>
-                <button onClick={() => handleClickAdd(item)} disabled={isInCart} className="productListButtonChild">{isInCart ? "In Cart" : "Add to Cart"}</button>
+                <button onClick={() => handleClickAdd(item)} className="productListButtonChild"><FaCartPlus /> Add to Cart</button>
               </div>
           </div>
         );

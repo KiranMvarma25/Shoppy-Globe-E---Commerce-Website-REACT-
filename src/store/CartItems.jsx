@@ -88,9 +88,9 @@ function CartItems(){
                         
                         <br />
                         
-                        <h3>Order Quantity : {item.minimumOrderQuantity}</h3>
+                        {/* <h3>Order Quantity : {item.minimumOrderQuantity}</h3>
                         
-                        <br />
+                        <br /> */}
                         
                         <h4>Return Policy : {item.returnPolicy}</h4>
                         

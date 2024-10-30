@@ -1,7 +1,7 @@
 function Footer(){
     return(
         <>  
-            <img src="https://www.shutterstock.com/image-vector/visa-mastercard-american-express-google-600nw-2391623829.jpg" alt="Image of Bank Cards" height="300px" width="100%" />
+            <img src="https://www.shutterstock.com/image-vector/visa-mastercard-american-express-google-600nw-2391623829.jpg" alt="Image of Bank Cards" height="200px" width="100%" />
             <div className="footer">
                 <h4>Become a Seller</h4>
                 <h4>Advertise</h4>
